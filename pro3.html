@@ -240,7 +240,31 @@ WITH req_sess AS (
     WHERE ws.created_at &lt; '2012-08-31' AND ws.created_at &gt; '2012-06-01' 
           AND ws.utm_source = "gsearch" AND ws.utm_campaign = "nonbrand"
 ),
-...
+land_page AS (
+    SELECT MIN(website_pageview_id) AS min_page, website_session_id 
+    FROM req_sess
+    GROUP BY website_session_id
+),
+land_url AS (
+    SELECT r.website_session_id, r.pageview_url 
+    FROM land_page lp 
+    LEFT JOIN req_sess r ON lp.min_page = r.website_pageview_id
+),
+bounce AS (
+    SELECT r.website_session_id, COUNT(DISTINCT r.website_pageview_id) AS page_num, l.pageview_url AS num_page 
+    FROM req_sess r
+    LEFT JOIN land_url l ON r.website_session_id = l.website_session_id
+    GROUP BY r.website_session_id, l.pageview_url
+    HAVING COUNT(DISTINCT r.website_pageview_id) = 1
+)
+SELECT l.pageview_url, MIN(DATE(r.created_at)) AS first_date, 
+       COUNT(DISTINCT l.website_session_id) AS total,
+       COUNT(DISTINCT b.website_session_id) AS bou,
+       COUNT(DISTINCT b.website_session_id) / COUNT(DISTINCT l.website_session_id) AS bou_rate
+FROM req_sess r
+LEFT JOIN land_url l ON r.website_session_id = l.website_session_id
+LEFT JOIN bounce b ON r.website_session_id = b.website_session_id
+GROUP BY l.pageview_url, WEEK(r.created_at);
         </pre>
         <p class="section-description">
             Findings: The analysis indicated varying bounce rates across different landing pages. [Insert specific insights].
@@ -254,11 +278,46 @@ WITH req_sess AS (
             To identify potential drop-off points in the user journey for the "Original Mr. Fuzzy" product, I performed a funnel analysis to track user interactions from product selection to order completion.
         </p>
         <pre class="code-block">
-WITH main_table AS (
-    SELECT ws.website_session_id, wp.website_pageview_id, wp.created_at AS pv_created_at, wp.pageview_url,
-           CASE WHEN wp.pageview_url IN ('/home', '/lander-1', '/lander-2') THEN 1 ELSE 0 END AS start_click,
-           CASE WHEN wp.pageview_url = '/products' THEN 1 ELSE 0 END AS product_click,
-           ...
+            WITH main_table AS (
+                SELECT ws.website_session_id, wp.website_pageview_id, wp.created_at AS pv_created_at, wp.pageview_url,
+                       CASE WHEN wp.pageview_url IN ('/home', '/lander-1', '/lander-2') THEN 1 ELSE 0 END AS start_click,
+                       CASE WHEN wp.pageview_url = '/products' THEN 1 ELSE 0 END AS product_click,
+                       CASE WHEN wp.pageview_url = '/the-original-mr-fuzzy' THEN 1 ELSE 0 END AS mr_fuzzy_click,
+                       CASE WHEN wp.pageview_url = '/cart' THEN 1 ELSE 0 END AS cart_click,
+                       CASE WHEN wp.pageview_url = '/shipping' THEN 1 ELSE 0 END AS ship_click,
+                       CASE WHEN wp.pageview_url IN ('/billing') THEN 1 ELSE 0 END AS bill_click,
+                       CASE WHEN wp.pageview_url = '/thank-you-for-your-order' THEN 1 ELSE 0 END AS ty_click
+                FROM website_sessions ws
+                LEFT JOIN website_pageviews wp ON ws.website_session_id = wp.website_session_id
+                WHERE ws.created_at BETWEEN '2012-08-05' AND '2012-09-05'
+                      AND wp.pageview_url IN ('/home', '/lander-1', '/lander-2', '/products', '/the-original-mr-fuzzy', '/cart', '/shipping', '/billing', '/thank-you-for-your-order')
+                      AND ws.utm_source = "gsearch"
+            ),
+            funnel AS (
+                SELECT website_session_id, 
+                       MAX(product_click) AS pc, 
+                       MAX(mr_fuzzy_click) AS fc, 
+                       MAX(cart_click) AS cc,
+                       MAX(ship_click) AS shc, 
+                       MAX(bill_click) AS bc, 
+                       MAX(ty_click) AS tyc
+                FROM main_table
+                GROUP BY website_session_id
+            )
+            SELECT COUNT(DISTINCT website_session_id) AS total_sessions,
+                   SUM(pc) AS conv_to_pc,
+                   SUM(fc) AS conv_to_fc,
+                   SUM(cc) AS conv_to_cc,
+                   SUM(shc) AS conv_to_shc,
+                   SUM(bc) AS conv_to_bc,
+                   SUM(tyc) AS conv_to_tyc,
+                   SUM(fc) / SUM(pc) AS rate_fuzzy,
+                   SUM(cc) / SUM(fc) AS rate_cart,
+                   SUM(shc) / SUM(cc) AS rate_ship,
+                   SUM(bc) / SUM(shc) AS rate_bill,
+                   SUM(tyc) / SUM(bc) AS rate_order
+            FROM funnel;
+            
         </pre>
         <p class="section-description">
             Findings: The funnel analysis revealed critical insights into user drop-off points. [Insert specific insights].
@@ -532,13 +591,20 @@ GROUP BY 1;
             To examine refund trends, I analyzed refund rates for specific products over time.
         </p>
         <pre class="code-block">
-SELECT product_id,
-       MONTH(created_at) AS month,
-       COUNT(DISTINCT CASE WHEN is_refund = 1 THEN order_id END) / COUNT(DISTINCT order_id) AS refund_rate
-FROM orders
-WHERE created_at BETWEEN '2014-01-01' AND '2014-11-01'
-GROUP BY product_id, month
-ORDER BY product_id, month;
+            SELECT
+            YEAR(oi.created_at) AS yr,
+            MONTH(oi.created_at) AS mo,
+            COUNT(DISTINCT CASE WHEN oi.product_id = 1 THEN r.order_item_id END) AS p1_refunds,
+            COUNT(DISTINCT CASE WHEN oi.product_id = 1 THEN r.order_item_id END) / COUNT(DISTINCT CASE WHEN oi.product_id = 1 THEN oi.order_item_id END) AS p1_refu_rate,
+            COUNT(DISTINCT CASE WHEN oi.product_id = 2 THEN r.order_item_id END) AS p2_refunds,
+            COUNT(DISTINCT CASE WHEN oi.product_id = 2 THEN r.order_item_id END) / COUNT(DISTINCT CASE WHEN oi.product_id = 2 THEN oi.order_item_id END) AS p2_refu_rate,
+            COUNT(DISTINCT CASE WHEN oi.product_id = 3 THEN r.order_item_id END) AS p3_refunds,
+            COUNT(DISTINCT CASE WHEN oi.product_id = 3 THEN r.order_item_id END) / COUNT(DISTINCT CASE WHEN oi.product_id = 3 THEN oi.order_item_id END) AS p3_refu_rate
+        FROM order_items oi
+        LEFT JOIN order_item_refunds r ON oi.order_item_id = r.order_item_id
+        WHERE oi.created_at < '2014-10-15'
+        GROUP BY 1, 2;
+        
         </pre>
         <p class="section-description">
             Findings: Tracking refund rates provided insights into customer satisfaction. [Insert observations, e.g., "Refund rates for Product A decreased from X% to Y% over the analyzed period, suggesting improved customer satisfaction."]
