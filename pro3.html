@@ -187,7 +187,7 @@ GROUP BY ws.device_type, ws.utm_source;
     <!-- Direct Traffic and Conversion Analysis -->
     <h3>5. Direct Traffic and Conversion Analysis</h3>
     <p>Analyzing direct traffic conversion rates by month:</p>
-    <<pre class="code-block">
+    <pre class="code-block">
 SELECT YEAR(created_at) AS yr, MONTH(created_at) AS mo,
        COUNT(DISTINCT CASE WHEN utm_campaign = "nonbrand" THEN website_session_id END) AS nonbrand,
        COUNT(DISTINCT CASE WHEN utm_campaign = "brand" THEN website_session_id END) AS brand,
