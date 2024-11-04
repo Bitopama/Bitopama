@@ -69,10 +69,15 @@
         }
     });
 
+    const scrollContainer = document.querySelector('.project-container');
 
-	/* Removes Long Focus On Buttons */
-	$(".button, a, button").mouseup(function() {
-		$(this).blur();
-	});
-
+    function scrollLeft() {
+        scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+    
+    function scrollRight() {
+        scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+    
+    
 })(jQuery);
