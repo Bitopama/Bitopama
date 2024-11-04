@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>Portfolio Projects</title>
+    
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/newf.jpg">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            
+            <!-- Image Logo -->
+             <!--<a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>   -->
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+             <a class="navbar-brand logo-text page-scroll" href="index.html">Bitopama Modak</a> 
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#header">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link page-scroll" href="index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="https://www.linkedin.com/in/bitopama-modak">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://github.com/bitopama">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+                
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+
+    <header class="ex-header" style="background-color: #A8977C;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10">
+                    <h1 style="color: #ffffff; text-align: left;">Movies dashboard</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header>
+    
+
+  <!-- Basic -->
+<div class="ex-basic-1 pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Goal</h2>
+                <p>The primary goal of this project was to analyze a comprehensive movie dataset to uncover trends in genres, runtime, approval ratings, and profitability. The objective was to create an interactive dashboard that provides insights into movie performance, helping stakeholders make data-driven decisions in the entertainment industry.</p>
+                <div class="actions">
+                    <ul>
+                        <li><a href="https://github.com/Bitopama/Movie-Analysis-Dashboard" class="button">View on GitHub</a></li>
+                    </ul>
+                </div>
+                <style>
+                    .actions ul {
+                        list-style-type: none; /* Ensures no bullet points in list */
+                        padding-left: 0; /* Removes default left padding */
+                    }
+                    .actions li {
+                        display: inline-block; /* Ensures the button is properly displayed inline */
+                    }
+                </style>
+                <h2>Background Information</h2>
+                <p>The dataset contained detailed information on various movies, including title, genre, runtime, release date, budget, revenue, and ratings. Data preprocessing was essential to resolve inconsistencies and tag movies with the same title by their production date, ensuring data accuracy. The cleaned dataset served as the basis for analyzing key metrics like return on investment and identifying popular genres and top-rated directors.</p>
+
+                <h2>Dashboard Design and Creation</h2>
+                <p>After preprocessing, I used DAX to create new measures that calculated return on investment and rated directors based on average movie ratings. The dashboard provides dynamic insights into movie performance by enabling filters such as genre, year, and rating. Key visuals include trends in average runtime over the years, popularity of genres, and a comparison of approval ratings against profitability.</p>
+                <div style="flex: 1;">
+                    <iframe title="movie_data_Analysis3" width="1140" height="579" src="https://app.powerbi.com/view?r=eyJrIjoiMjc0NjNiMDAtNTI0NC00ZjUzLWJjOWItYzBjMWZkNmEzNTg1IiwidCI6ImMzYmY3ZDIyLWVkOGUtNDE0My1hZjlkLTkwYmZiMDVlNDEzMyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+                <p>The dashboard also features year-over-year (YoY) comparisons of key metrics, highlighting trends in movie production and profitability. Monthly box office trends offer insight into seasonal patterns, with the data segmented by genre to identify preferences over time. Filters allow users to explore metrics based on criteria like genre and budget, helping stakeholders understand what factors influence success in the movie industry.</p>
+                <p>Further analysis examines the relationship between approval ratings and profitability, identifying genres and directors with the highest returns. The dashboard also highlights the most popular genres and the top-performing directors based on ratings, providing valuable insights into audience preferences and industry trends.</p>
+
+                <h2>Conclusion</h2>
+                <p>The final dashboard provided an interactive overview of the movie industry, allowing users to explore trends in genres, director ratings, and financial performance. By presenting these insights in an accessible format, the dashboard makes complex data available to stakeholders, enabling more informed decision-making.</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of ex-basic-1 -->
+<!-- end of basic -->
+
+<!-- Footer -->
+<div class="footer" style="background: linear-gradient(135deg,  #A8977C , #b7a07ac9); padding: 40px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="social-container">
+                    <span class="fa-stack">
+                        <a href="https://www.linkedin.com/in/bitopama-modak/">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-linkedin fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://github.com/Bitopama">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="mailto:bitopama.m@gmail.com">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-envelope fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </div> <!-- end of social-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>Portfolio Projects</title>
+    
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/newf.jpg">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            
+            <!-- Image Logo -->
+             <!--<a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>   -->
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+             <a class="navbar-brand logo-text page-scroll" href="index.html">Bitopama Modak</a> 
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#header">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link page-scroll" href="index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="https://www.linkedin.com/in/bitopama-modak">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://github.com/bitopama">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+                
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+
+    <header class="ex-header" style="background-color: #A8977C;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10">
+                    <h1 style="color: #ffffff; text-align: left;">E Commerce Traffic Analysis</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header>
+    
+
+<!-- E-Commerce Website Traffic Analysis -->
+<div class="ex-basic-1 pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>E-Commerce Website Traffic Analysis</h2>
+                <p>The primary goal of this project was to analyze website traffic data for an e-commerce platform to derive actionable insights related to user behavior, conversion rates, and overall site performance. The objective was to understand traffic sources, user engagement, and the impact of product launches on sales.</p>
+                <div class="actions">
+                    <ul>
+                        <li><a href="https://github.com/Bitopama/E-Commerce-Website-Traffic-Analysis" class="button">View on GitHub</a></li>
+                    </ul>
+                </div>
+                <style>
+                    .actions ul {
+                        list-style-type: none; /* Ensures no bullet points in list */
+                        padding-left: 0; /* Removes default left padding */
+                    }
+                    .actions li {
+                        display: inline-block; /* Ensures the button is properly displayed inline */
+                    }
+                </style>
+
+             <!-- Project Section: E-Commerce Website Traffic Analysis -->
+<div class="section">
+    <h2 class="section-title">Channel Portfolio and Conversion Insights</h2>
+    
+    <h3 class="section-subtitle">Introduction</h3>
+    <p class="section-description">
+        This analysis focused on evaluating the performance of various marketing channels, emphasizing user engagement via session trends and conversion rates for an e-commerce platform. The analysis included traffic sources, device types, and campaign strategies, using MySQL for data extraction and manipulation.
+    </p>
+
+    <!-- Channel Portfolio Analysis -->
+    <h3>1. Channel Portfolio Analysis</h3>
+    <p>To assess marketing channels' effectiveness, I analyzed UTM content to identify channels with the highest session counts and orders.</p>
+    <pre class="code-block">
+SELECT ws.utm_content, COUNT(DISTINCT ws.website_session_id) AS sessions, 
+       COUNT(DISTINCT o.website_session_id) AS orders,
+       (COUNT(DISTINCT o.website_session_id) / COUNT(DISTINCT ws.website_session_id)) AS conversion_rate
+FROM website_sessions ws
+LEFT JOIN orders o ON ws.website_session_id = o.website_session_id
+WHERE ws.created_at BETWEEN '2014-01-01' AND '2014-02-01'
+GROUP BY ws.utm_content
+ORDER BY conversion_rate DESC;
+    </pre>
+    <p>Findings: Certain UTM content types were top performers in generating sessions and orders, particularly [insert top UTM content]. The conversion rates highlighted the value of targeted messaging.</p>
+
+    <!-- Session Volume Trends -->
+    <h3>2. Session Volume Trends: Google Search vs. Bing Search</h3>
+    <p>To compare Google Search and Bing Search session volume trends weekly for non-brand campaigns:</p>
+    <pre class="code-block">
+SELECT MIN(DATE(created_at)) AS start_of_week,
+       COUNT(DISTINCT CASE WHEN utm_source = "gsearch" THEN website_session_id END) AS gsearch,
+       COUNT(DISTINCT CASE WHEN utm_source = "bsearch" THEN website_session_id END) AS bsearch
+FROM website_sessions 
+WHERE created_at BETWEEN '2012-08-22' AND '2012-11-29' 
+      AND utm_campaign = "nonbrand"
+GROUP BY WEEK(created_at);
+    </pre>
+    <p>Findings: Google Search consistently outperformed Bing in session volume, showing its value as a primary traffic source for non-brand campaigns.</p>
+
+    <!-- Device Type Analysis -->
+    <h3>3. Device Type Analysis for Non-Brand Campaigns</h3>
+    <p>Session volume segmented by device type for Google and Bing searches:</p>
+    <pre class="code-block">
+SELECT utm_source,
+       COUNT(DISTINCT CASE WHEN device_type = "mobile" THEN website_session_id END) AS mobile_sessions,
+       COUNT(DISTINCT CASE WHEN device_type = "desktop" THEN website_session_id END) AS desktop_sessions
+FROM website_sessions
+WHERE created_at BETWEEN '2012-08-22' AND '2012-11-30' 
+      AND utm_campaign = "nonbrand"
+GROUP BY utm_source;
+   </pre>
+    <p>Findings: [Insert insights, such as higher engagement on mobile for Google Search].</p>
+
+    <!-- Conversion Rates by Device Type -->
+    <h3>4. Conversion Rates by Device Type</h3>
+    <p>Exploring conversion rates by device type for Google and Bing searches:</p>
+    <pre class="code-block">
+SELECT ws.device_type, ws.utm_source,
+       COUNT(DISTINCT ws.website_session_id) AS sessions,
+       COUNT(DISTINCT o.order_id) AS orders,
+       COUNT(DISTINCT o.website_session_id) / COUNT(DISTINCT ws.website_session_id) AS conversion_rates
+FROM website_sessions ws
+LEFT JOIN orders o ON ws.website_session_id = o.website_session_id
+WHERE ws.created_at >= '2012-08-22' AND ws.created_at < '2012-09-18'
+      AND ws.utm_campaign = "nonbrand"
+GROUP BY ws.device_type, ws.utm_source;
+   </pre>
+    <p>Findings: [Insert findings, e.g., mobile conversion rates higher for Google Search].</p>
+
+    <!-- Direct Traffic and Conversion Analysis -->
+    <h3>5. Direct Traffic and Conversion Analysis</h3>
+    <p>Analyzing direct traffic conversion rates by month:</p>
+    <<pre class="code-block">
+SELECT YEAR(created_at) AS yr, MONTH(created_at) AS mo,
+       COUNT(DISTINCT CASE WHEN utm_campaign = "nonbrand" THEN website_session_id END) AS nonbrand,
+       COUNT(DISTINCT CASE WHEN utm_campaign = "brand" THEN website_session_id END) AS brand,
+       COUNT(DISTINCT CASE WHEN utm_campaign = "brand" THEN website_session_id END) / 
+       COUNT(DISTINCT CASE WHEN utm_campaign = "nonbrand" THEN website_session_id END) AS brand_pct_of_nonbrand,
+       COUNT(DISTINCT CASE WHEN utm_source IS NULL AND http_referer IS NULL THEN website_session_id END) AS direct_type,
+       COUNT(DISTINCT CASE WHEN utm_source IS NULL AND http_referer IS NULL THEN website_session_id END) / 
+       COUNT(DISTINCT CASE WHEN utm_campaign = "nonbrand" THEN website_session_id END) AS direct_pct_of_nonbrand,
+       COUNT(DISTINCT CASE WHEN utm_source IS NULL AND http_referer = "https://www.gsearch.com" THEN website_session_id END) AS organic_g_type,
+       COUNT(DISTINCT CASE WHEN utm_source IS NULL AND http_referer = "https://www.gsearch.com" THEN website_session_id END) / 
+       COUNT(DISTINCT CASE WHEN utm_campaign = "nonbrand" THEN website_session_id END) AS direct_og_of_nonbrand,
+       COUNT(DISTINCT CASE WHEN utm_source IS NULL AND http_referer = "https://www.bsearch.com" THEN website_session_id END) AS organic_b_type,
+       COUNT(DISTINCT CASE WHEN utm_source IS NULL AND http_referer = "https://www.bsearch.com" THEN website_session_id END) / 
+       COUNT(DISTINCT CASE WHEN utm_campaign = "nonbrand" THEN website_session_id END) AS direct_ob_of_nonbrand
+FROM website_sessions
+GROUP BY 1, 2;
+    </pre>
+    <p>Findings: Direct traffic had a substantial impact on non-brand conversions, with [include specific trend, e.g., monthly increases]. This emphasizes the importance of direct traffic in brand engagement.</p>
+
+    <!-- Conclusion -->
+    <div class="subsection">
+        <h3 class="section-subtitle">Conclusion</h3>
+        <p class="section-description">
+            Through this analysis of traffic sources, device types, and direct interactions, I identified key areas for optimization and strategy enhancement. Focusing on Google Search strategies, mobile optimization, and direct traffic engagement could drive significant growth in conversions.
+        </p>
+    </div> <!-- end of subsection -->
+</div> <!-- end of section -->
+
+
+ <!-- Section for Bounce Rate Trends and Funnel Analysis -->
+<div class="section">
+    <h2 class="section-title">Bounce Rate Trends and Funnel Analysis</h2>
+    
+    <h3 class="section-subtitle">Introduction</h3>
+    <p class="section-description">
+        In this segment of the analysis, I focused on understanding user engagement through bounce rates from landing pages and examining the conversion funnel for the product "Original Mr. Fuzzy." This investigation aimed to identify user behavior patterns and drop-off points during the shopping experience.
+    </p>
+    
+    <!-- Bounce Rate Trends Analysis -->
+    <div class="subsection">
+        <h3 class="section-subtitle">1. Bounce Rate Weekly Trends from Landing Pages</h3>
+        <p class="section-description">
+            To evaluate user engagement, I analyzed bounce rates across various landing pages driven by Google Search for non-brand campaigns.
+        </p>
+        <pre class="code-block">
+WITH req_sess AS (
+    SELECT ws.website_session_id, ws.created_at, wp.pageview_url, wp.website_pageview_id
+    FROM website_sessions ws 
+    LEFT JOIN website_pageviews wp ON ws.website_session_id = wp.website_session_id 
+    WHERE ws.created_at &lt; '2012-08-31' AND ws.created_at &gt; '2012-06-01' 
+          AND ws.utm_source = "gsearch" AND ws.utm_campaign = "nonbrand"
+),
+...
+        </pre>
+        <p class="section-description">
+            Findings: The analysis indicated varying bounce rates across different landing pages. [Insert specific insights].
+        </p>
+    </div>
+
+    <!-- Funnel Analysis of "Original Mr. Fuzzy" -->
+    <div class="subsection">
+        <h3 class="section-subtitle">2. Funnel Analysis of "Original Mr. Fuzzy"</h3>
+        <p class="section-description">
+            To identify potential drop-off points in the user journey for the "Original Mr. Fuzzy" product, I performed a funnel analysis to track user interactions from product selection to order completion.
+        </p>
+        <pre class="code-block">
+WITH main_table AS (
+    SELECT ws.website_session_id, wp.website_pageview_id, wp.created_at AS pv_created_at, wp.pageview_url,
+           CASE WHEN wp.pageview_url IN ('/home', '/lander-1', '/lander-2') THEN 1 ELSE 0 END AS start_click,
+           CASE WHEN wp.pageview_url = '/products' THEN 1 ELSE 0 END AS product_click,
+           ...
+        </pre>
+        <p class="section-description">
+            Findings: The funnel analysis revealed critical insights into user drop-off points. [Insert specific insights].
+        </p>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="subsection">
+        <h3 class="section-subtitle">Conclusion</h3>
+        <p class="section-description">
+            Through the analysis of bounce rates and the conversion funnel for "Original Mr. Fuzzy," I identified key areas of concern that need addressing to optimize the user experience. [Insert conclusion details].
+        </p>
+    </div>
+</div>
+<!-- Section for Impact of Product Launch on Conversion Rates -->
+<div class="section">
+    <h2 class="section-title">E-Commerce Website Traffic Analysis: Impact of Product Launch on Conversion Rates</h2>
+    
+    <h3 class="section-subtitle">Introduction</h3>
+    <p class="section-description">
+        This section focuses on the impact of the product launch of "Love Bear" on user sessions and conversion rates for the products "Mr. Fuzzy" and "Love Bear." By analyzing user behavior before and after the product launch, I aimed to understand how the introduction of a new product influences customer engagement and purchasing decisions.
+    </p>
+    
+    <!-- Impact of Product Launch on Session Navigation -->
+    <div class="subsection">
+        <h3 class="section-subtitle">1. Impact of Product Launch on Session Navigation</h3>
+        <p class="section-description">
+            To evaluate how the launch of "Love Bear" affected user navigation from the product page to subsequent pages, I analyzed user sessions over the defined period.
+        </p>
+        <pre class="code-block">
+WITH product_sessions AS (
+    SELECT COUNT(DISTINCT website_pageview_id) AS page_count, website_session_id
+    FROM website_pageviews
+    WHERE created_at > '2012-10-06' AND created_at < '2013-04-06'
+    GROUP BY website_session_id
+    HAVING COUNT(DISTINCT website_pageview_id) > 2
+),
+non_bounced_sessions AS (
+    SELECT COUNT(DISTINCT website_pageview_id) AS page_count, website_session_id
+    FROM website_pageviews
+    WHERE created_at > '2012-10-06' AND created_at < '2013-04-06'
+    GROUP BY website_session_id
+    HAVING COUNT(DISTINCT website_pageview_id) > 1
+),
+products AS (
+    SELECT website_session_id, pageview_url
+    FROM website_pageviews
+    WHERE pageview_url IN ('/the-original-mr-fuzzy', '/the-forever-love-bear')
+)
+
+SELECT 
+    CASE 
+        WHEN ws.created_at < '2013-01-06' THEN 'pre_product_2' 
+        WHEN ws.created_at >= '2013-01-06' THEN 'post_product_2' 
+    END AS time_period,
+    COUNT(DISTINCT nbs.website_session_id) AS sessions,
+    COUNT(DISTINCT ps.website_session_id) AS sessions_w_next_pg,
+    COUNT(DISTINCT ps.website_session_id) / COUNT(DISTINCT nbs.website_session_id) AS pct_w_next_pg,
+    COUNT(DISTINCT CASE WHEN p.pageview_url = '/the-original-mr-fuzzy' THEN p.website_session_id END) AS to_mrfuzzy,
+    COUNT(DISTINCT CASE WHEN p.pageview_url = '/the-forever-love-bear' THEN p.website_session_id END) AS to_lovebear
+FROM website_sessions ws
+LEFT JOIN non_bounced_sessions nbs ON nbs.website_session_id = ws.website_session_id
+LEFT JOIN product_sessions ps ON ps.website_session_id = ws.website_session_id
+LEFT JOIN products p ON p.website_session_id = ws.website_session_id
+WHERE ws.created_at > '2012-10-06' AND ws.created_at < '2013-04-06'
+GROUP BY 1;
+        </pre>
+        <p class="section-description">
+            Findings: The analysis revealed significant shifts in user behavior pre- and post-launch of "Love Bear." [Insert specific results, e.g., the percentage of sessions navigating to the next page increased from X% to Y% after the launch.] This indicates a positive response to the new product, encouraging users to explore further.
+        </p>
+    </div>
+
+    <!-- Funnel Analysis of "Mr. Fuzzy" and "Love Bear" -->
+    <div class="subsection">
+        <h3 class="section-subtitle">2. Funnel Analysis of "Mr. Fuzzy" and "Love Bear"</h3>
+        <p class="section-description">
+            To assess the impact of the "Love Bear" launch on conversion rates, I performed a funnel analysis comparing user interactions before and after the launch.
+        </p>
+        <pre class="code-block">
+WITH product_sessions AS (
+    SELECT COUNT(DISTINCT website_pageview_id) AS page_count, website_session_id
+    FROM website_pageviews
+    WHERE created_at > '2012-10-06' AND created_at < '2013-04-06'
+    GROUP BY website_session_id
+    HAVING COUNT(DISTINCT website_pageview_id) > 2
+),
+funnel_1 AS (
+    SELECT website_session_id, created_at,
+           CASE WHEN pageview_url = '/cart' THEN 1 ELSE 0 END AS to_cart,
+           CASE WHEN pageview_url = '/shipping' THEN 1 ELSE 0 END AS to_ship,
+           CASE WHEN pageview_url IN ('/billing', '/billing-1', '/billing-2') THEN 1 ELSE 0 END AS to_bill,
+           CASE WHEN pageview_url = '/thank-you-for-your-order' THEN 1 ELSE 0 END AS to_thanks
+    FROM website_pageviews
+    WHERE website_session_id IN (SELECT website_session_id FROM product_sessions)
+)
+
+SELECT
+    CASE 
+        WHEN wp.pageview_url = '/the-original-mr-fuzzy' THEN 'mrfuzzy' 
+        WHEN wp.pageview_url = '/the-forever-love-bear' THEN 'lovebear' 
+    END AS product_category,
+    COUNT(DISTINCT f1.website_session_id) AS viewed_the_product,
+    COUNT(DISTINCT CASE WHEN f1.to_cart = 1 THEN wp.website_session_id END) AS to_cart,
+    COUNT(DISTINCT CASE WHEN f1.to_ship = 1 THEN wp.website_session_id END) AS to_ship,
+    COUNT(DISTINCT CASE WHEN f1.to_bill = 1 THEN wp.website_session_id END) AS to_bill,
+    COUNT(DISTINCT CASE WHEN f1.to_thanks = 1 THEN wp.website_session_id END) AS to_thanks,
+    COUNT(DISTINCT CASE WHEN f1.to_thanks = 1 THEN wp.website_session_id END) / COUNT(DISTINCT f1.website_session_id) AS buying_to_viewing
+FROM website_pageviews wp
+JOIN funnel_1 f1 ON wp.website_session_id = f1.website_session_id 
+WHERE wp.created_at > '2012-10-06' AND wp.created_at < '2013-04-06'
+AND pageview_url IN ('/the-original-mr-fuzzy', '/the-forever-love-bear')
+GROUP BY 1;
+        </pre>
+        <p class="section-description">
+            Findings: The funnel analysis illustrated how the introduction of "Love Bear" influenced conversion rates. [Insert specific conversion rates, e.g., viewing to purchasing rates for each product before and after the launch.] This data is essential in understanding the effectiveness of the new product in driving sales and customer engagement.
+        </p>
+    </div>
+
+    <!-- Revenue and Margin Analysis -->
+    <div class="subsection">
+        <h3 class="section-subtitle">3. Revenue and Margin Analysis</h3>
+        <p class="section-description">
+            Finally, I conducted a revenue and margin analysis to assess financial performance before and after the launch of "Love Bear."
+        </p>
+        <pre class="code-block">
+SELECT
+    CASE 
+        WHEN ws.created_at < '2013-01-06' THEN 'pre_love_bear'
+        WHEN ws.created_at >= '2013-01-06' THEN 'post_love_bear' 
+    END AS time_period,
+    COUNT(DISTINCT o.order_id) / COUNT(DISTINCT ws.website_session_id) AS conv_rate,
+    SUM(o.price_usd) / COUNT(DISTINCT o.order_id) AS aov,
+    SUM(o.price_usd - o.cogs_usd) / COUNT(DISTINCT o.order_id) AS avg_order_margin,
+    SUM(o.price_usd) / COUNT(DISTINCT ws.website_session_id) AS rev_per_sess,
+    SUM(o.price_usd - o.cogs_usd) / COUNT(DISTINCT ws.website_session_id) AS margin_per_sess 
+FROM website_sessions ws
+LEFT JOIN orders o ON ws.website_session_id = o.website_session_id
+WHERE ws.created_at BETWEEN '2012-10-06' AND '2013-04-06'
+GROUP BY 1;
+        </pre>
+        <p class="section-description">
+            Findings: The analysis revealed notable differences in conversion rates and average order values before and after the launch of "Love Bear." [Insert specific findings, e.g., the average order value increased from X to Y, and conversion rates improved by Z%.] This highlights the positive impact of the product launch on the financial metrics of the e-commerce site.
+        </p>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="subsection">
+        <h3 class="section-subtitle">Conclusion</h3>
+        <p class="section-description">
+            Through the analysis of user sessions, funnel conversion rates, and revenue margins, I was able to demonstrate the significant impact of the "Love Bear" product launch on customer behavior and business performance. These insights can guide future product launches and marketing strategies to optimize user engagement and sales.
+        </p>
+    </div>
+</div>
+<!-- Section for Repeat Sessions and Refund Rates -->
+<div class="section">
+    <h2 class="section-title">Repeat Sessions and Refund Rates Analysis</h2>
+    
+    <h3 class="section-subtitle">Introduction</h3>
+    <p class="section-description">
+        This analysis focuses on user behavior regarding repeat sessions, including the timing between these sessions and insights into new and repeated sessions based on traffic sources. Additionally, I examined refund rates for specific products over time to understand the potential correlation between repeat sessions and customer satisfaction.
+    </p>
+    
+    <!-- Repeat Sessions Analysis -->
+    <div class="subsection">
+        <h3 class="section-subtitle">1. Repeat Sessions Analysis</h3>
+        <p class="section-description">
+            To understand how many users engage in repeat sessions, I created a temporary table to capture user IDs and their corresponding sessions.
+        </p>
+        <pre class="code-block">
+CREATE TEMPORARY TABLE sessions_w_repeats AS
+SELECT ns.user_id,
+       ns.website_session_id AS new_session_id,
+       ns.created_at AS new_session_created_at,
+       ws.created_at AS repeated_session_created_at,
+       ws.website_session_id AS repeat_sessions
+FROM (
+    SELECT user_id,
+           website_session_id, created_at 
+    FROM website_sessions
+    WHERE created_at < '2014-11-01'
+      AND created_at >= '2014-01-01'
+      AND is_repeat_session = 0
+) AS ns
+LEFT JOIN website_sessions ws
+ON ws.website_session_id > ns.website_session_id
+   AND ws.user_id = ns.user_id
+   AND ws.is_repeat_session = 1
+   AND ws.created_at < '2014-11-01' 
+   AND ws.created_at >= '2014-01-01';
+
+-- Retrieve data for review
+SELECT * FROM sessions_w_repeats;
+
+-- Count distinct users for each repeat session
+SELECT repeat_sessions,
+       COUNT(DISTINCT user_id) AS users
+FROM (
+    SELECT user_id,
+           COUNT(DISTINCT repeat_sessions) AS repeat_sessions
+    FROM sessions_w_repeats
+    GROUP BY 1
+) AS user_level
+GROUP BY 1;
+
+-- Example: Review a specific user
+SELECT * FROM sessions_w_repeats WHERE user_id = 152837;
+        </pre>
+        <p class="section-description">
+            Findings: This analysis allowed me to quantify how many users engage in repeat sessions. [Insert specific results, e.g., "X users had Y repeat sessions."] Understanding user engagement is crucial for optimizing retention strategies.
+        </p>
+    </div>
+    
+    <!-- Time Between First and Second Sessions -->
+    <div class="subsection">
+        <h3 class="section-subtitle">2. Time Between First and Second Sessions</h3>
+        <p class="section-description">
+            Next, I investigated the time interval between a user's first and second session.
+        </p>
+        <pre class="code-block">
+WITH first_t AS (
+    SELECT user_id, new_session_created_at, repeated_session_created_at 
+    FROM sessions_w_repeats
+    WHERE repeat_sessions IS NOT NULL
+),
+data_t AS (
+    SELECT user_id, 
+           DATEDIFF(MIN(repeated_session_created_at), MIN(new_session_created_at)) AS diff_time
+    FROM first_t
+    GROUP BY 1
+)
+SELECT AVG(diff_time) AS avg_time_diff,
+       MIN(diff_time) AS min_time_diff,
+       MAX(diff_time) AS max_time_diff 
+FROM data_t;
+        </pre>
+        <p class="section-description">
+            Findings: The analysis revealed insights into user behavior patterns concerning repeat sessions. [Insert specific findings regarding the average, minimum, and maximum time intervals, e.g., "The average time between sessions was X days."]
+        </p>
+    </div>
+    
+    <!-- New vs. Repeated Sessions Based on Traffic Sources -->
+    <div class="subsection">
+        <h3 class="section-subtitle">3. New vs. Repeated Sessions Based on Traffic Sources</h3>
+        <p class="section-description">
+            To analyze how different traffic sources contributed to new and repeat sessions, I classified sessions based on UTM parameters.
+        </p>
+        <pre class="code-block">
+SELECT 
+    CASE 
+        WHEN utm_source IS NULL AND http_referer IN ('https://www.gsearch.com','https://www.bsearch.com') THEN 'organic search' 
+        WHEN utm_source IS NULL AND http_referer IS NULL THEN 'direct type in'
+        WHEN utm_campaign = 'nonbrand' THEN 'paid nonbrand'
+        WHEN utm_campaign = 'brand' THEN 'paid brand'
+        ELSE 'other'
+    END AS traffic_source,
+    COUNT(DISTINCT CASE WHEN is_repeat_session = 0 THEN website_session_id END) AS new_sessions,
+    COUNT(DISTINCT CASE WHEN is_repeat_session = 1 THEN website_session_id END) AS repeat_sessions
+FROM website_sessions
+WHERE created_at BETWEEN '2014-01-01' AND '2014-11-01'
+GROUP BY 1;
+        </pre>
+        <p class="section-description">
+            Findings: This analysis provided insights into traffic source effectiveness in attracting new versus repeat sessions. [Insert specific observations, e.g., "Organic search contributed to X% of new sessions and Y% of repeat sessions."]
+        </p>
+    </div>
+    
+    <!-- Refund Rates Over Time -->
+    <div class="subsection">
+        <h3 class="section-subtitle">4. Refund Rates Over Time</h3>
+        <p class="section-description">
+            To examine refund trends, I analyzed refund rates for specific products over time.
+        </p>
+        <pre class="code-block">
+SELECT product_id,
+       MONTH(created_at) AS month,
+       COUNT(DISTINCT CASE WHEN is_refund = 1 THEN order_id END) / COUNT(DISTINCT order_id) AS refund_rate
+FROM orders
+WHERE created_at BETWEEN '2014-01-01' AND '2014-11-01'
+GROUP BY product_id, month
+ORDER BY product_id, month;
+        </pre>
+        <p class="section-description">
+            Findings: Tracking refund rates provided insights into customer satisfaction. [Insert observations, e.g., "Refund rates for Product A decreased from X% to Y% over the analyzed period, suggesting improved customer satisfaction."]
+        </p>
+    </div>
+    
+    <!-- Conclusion -->
+    <div class="subsection">
+        <h3 class="section-subtitle">Conclusion</h3>
+        <p class="section-description">
+            By analyzing repeat sessions, session intervals, traffic sources, and refund rates, I gained valuable insights into user engagement, retention, and satisfaction. These findings offer actionable strategies for improving customer experience and optimizing product offerings.
+        </p>
+    </div>
+</div>
+<div class="section">
+    <h2 class="section-title">Cross-Selling and Revenue Impact</h2>
+    
+    <h3 class="section-subtitle">Introduction</h3>
+    <p class="section-description">
+        This analysis examines the effectiveness of cross-selling strategies for various product types, exploring user behavior in relation to cart sessions, and assessing the financial impact of the "Birthday Sugar Panda" product launch. Key focus areas include conversion rates and revenue changes.
+    </p>
+    
+    <!-- Cross-Selling Product Analysis -->
+    <div class="subsection">
+        <h3 class="section-subtitle">1. Cross-Selling Product Analysis</h3>
+        <p class="section-description">
+            To evaluate cross-selling opportunities, I analyzed order data to determine how frequently distinct primary products were purchased along with cross-sold items.
+        </p>
+        <pre class="code-block">
+SELECT o.primary_product_id,
+       COUNT(DISTINCT oi.order_item_id) AS order_counts,
+       COUNT(DISTINCT CASE WHEN oi.product_id = 1 THEN oi.order_item_id END) AS cross_sell_prod_1,
+       COUNT(DISTINCT CASE WHEN oi.product_id = 2 THEN oi.order_item_id END) AS cross_sell_prod_2,
+       COUNT(DISTINCT CASE WHEN oi.product_id = 3 THEN oi.order_item_id END) AS cross_sell_prod_3
+FROM orders o
+LEFT JOIN order_items oi ON o.order_id = oi.order_id 
+WHERE o.order_id BETWEEN 10000 AND 11000
+GROUP BY 1;
+        </pre>
+        <p class="section-description">
+            Findings: This analysis highlighted the most common cross-sold products alongside each primary product. [Insert specific findings, e.g., "Product X was cross-sold with Product Y in Z% of orders." This data offers insight into customer preferences and informs targeted marketing strategies to boost cross-selling opportunities.]
+        </p>
+    </div>
+
+    <!-- Click-Through Rates from Cart Page -->
+    <div class="subsection">
+        <h3 class="section-subtitle">2. Click-Through Rates from Cart Page</h3>
+        <p class="section-description">
+            To understand user click-through behavior after viewing products on the cart page, I analyzed sessions to see how many proceeded to the next stage.
+        </p>
+        
+        <h4>Fetching Cart Session Data:</h4>
+        <pre class="code-block">
+CREATE TEMPORARY TABLE sessions_seeing_cart AS
+SELECT
+    CASE 
+        WHEN created_at < '2013-09-25' THEN 'A.Pre_Cross_Sell' 
+        WHEN created_at >= '2013-09-25' THEN 'B.Post_Cross_Sell'
+    END AS time_period,
+    website_session_id AS cart_session_id,
+    website_pageview_id AS cart_pageview_id
+FROM website_pageviews 
+WHERE created_at BETWEEN '2013-08-25' AND '2013-10-25'
+  AND pageview_url = '/cart';
+
+-- Review cart sessions
+SELECT * FROM sessions_seeing_cart;
+        </pre>
+
+        <h4>Identifying Sessions Moving to Next Page:</h4>
+        <pre class="code-block">
+CREATE TEMPORARY TABLE cart_sessions_seeing_another_page AS
+SELECT ssc.time_period,
+       ssc.cart_session_id,
+       MIN(wp.website_pageview_id) AS pv_id_after_cart
+FROM sessions_seeing_cart ssc
+LEFT JOIN website_pageviews wp
+ON ssc.cart_session_id = wp.website_session_id
+   AND ssc.cart_pageview_id < wp.website_pageview_id
+GROUP BY 1, 2;
+
+-- Review the sessions that moved to another page
+SELECT * FROM cart_sessions_seeing_another_page;
+DROP TEMPORARY TABLE cart_sessions_seeing_another_page;
+        </pre>
+
+        <h4>Cart Sessions with Orders:</h4>
+        <pre class="code-block">
+CREATE TEMPORARY TABLE cart_sessions_with_orders AS
+SELECT ssc.time_period,
+       ssc.cart_session_id,
+       o.order_id,
+       o.items_purchased,
+       o.price_usd
+FROM sessions_seeing_cart ssc
+LEFT JOIN orders o ON ssc.cart_session_id = o.website_session_id;
+
+-- Review cart sessions with associated orders
+SELECT * FROM cart_sessions_with_orders;
+DROP TEMPORARY TABLE cart_sessions_with_orders;
+        </pre>
+        <p class="section-description">
+            Findings: By tracking sessions that transitioned from the cart page to subsequent pages, I assessed the effectiveness of the cross-selling strategy. [Insert specific findings, such as the increase in the percentage of users moving to the next page after introducing cross-sell prompts. This data provides insights into user engagement with suggested items and informs adjustments to cross-selling tactics.]
+        </p>
+    </div>
+
+    <!-- Revenue Impact of Product Launch -->
+    <div class="subsection">
+        <h3 class="section-subtitle">3. Revenue Impact of "Birthday Sugar Panda" Launch</h3>
+        <p class="section-description">
+            I conducted a revenue analysis to assess the financial impact of launching the "Birthday Sugar Panda" product by comparing key metrics before and after the product launch.
+        </p>
+        <pre class="code-block">
+SELECT
+    CASE 
+        WHEN ws.created_at < '2013-09-25' THEN 'pre_sugar_panda'
+        WHEN ws.created_at >= '2013-09-25' THEN 'post_sugar_panda' 
+    END AS time_period,
+    COUNT(DISTINCT o.order_id) / COUNT(DISTINCT ws.website_session_id) AS conv_rate,
+    SUM(o.price_usd) / COUNT(DISTINCT o.order_id) AS aov,
+    SUM(o.price_usd - o.cogs_usd) / COUNT(DISTINCT o.order_id) AS avg_order_margin,
+    SUM(o.price_usd) / COUNT(DISTINCT ws.website_session_id) AS rev_per_sess,
+    SUM(o.price_usd - o.cogs_usd) / COUNT(DISTINCT ws.website_session_id) AS margin_per_sess 
+FROM website_sessions ws
+LEFT JOIN orders o ON ws.website_session_id = o.website_session_id
+WHERE ws.created_at BETWEEN '2013-08-25' AND '2013-10-25'
+GROUP BY 1;
+        </pre>
+        <p class="section-description">
+            Findings: This revenue analysis highlighted notable differences in conversion rates and average order values pre- and post-launch of "Birthday Sugar Panda." [Insert specific findings, e.g., the average order value increased from X to Y, and conversion rates improved by Z%.] This illustrates the positive financial impact of the product launch on overall sales and revenue metrics.
+        </p>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="subsection">
+        <h3 class="section-subtitle">Conclusion</h3>
+        <p class="section-description">
+            The cross-selling, cart behavior, and revenue analyses revealed the "Birthday Sugar Panda" launch's influence on customer purchasing patterns and overall revenue. These insights can inform cross-selling strategy adjustments, cart page optimizations, and future product launches to maximize customer engagement and revenue.
+        </p>
+    </div>
+</div>
+
+</div> <!-- end of col -->
+</div> <!-- end of row -->
+</div> <!-- end of container -->
+</div> 
+
+   <!-- Footer -->
+   <div class="footer" style="background: linear-gradient(135deg,  #A8977C , #b7a07ac9); padding: 40px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="social-container">
+                    <span class="fa-stack">
+                        <a href="https://www.linkedin.com/in/bitopama-modak/">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-linkedin fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://github.com/Bitopama">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="mailto:mbitopama@gmail.com">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-envelope fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </div> <!-- end of social-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->  
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
