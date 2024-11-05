@@ -138,7 +138,7 @@ WHERE ws.created_at BETWEEN '2014-01-01' AND '2014-02-01'
 GROUP BY ws.utm_content
 ORDER BY conversion_rate DESC;
     </pre>
-    <p>Findings: Certain UTM content types were top performers in generating sessions and orders, particularly [insert top UTM content]. The conversion rates highlighted the value of targeted messaging.</p>
+    <p>Findings: Certain UTM content types were top performers in generating sessions and orders, particularly Google Ad-1. The conversion rates highlighted the value of targeted messaging.</p>
 
     <!-- Session Volume Trends -->
     <h3>2. Session Volume Trends: Google Search vs. Bing Search</h3>
@@ -166,7 +166,7 @@ WHERE created_at BETWEEN '2012-08-22' AND '2012-11-30'
       AND utm_campaign = "nonbrand"
 GROUP BY utm_source;
    </pre>
-    <p>Findings: [Insert insights, such as higher engagement on mobile for Google Search].</p>
+    <p>Findings: Higher sessions on desktop for Google Search.</p>
 
     <!-- Conversion Rates by Device Type -->
     <h3>4. Conversion Rates by Device Type</h3>
@@ -182,7 +182,7 @@ WHERE ws.created_at >= '2012-08-22' AND ws.created_at < '2012-09-18'
       AND ws.utm_campaign = "nonbrand"
 GROUP BY ws.device_type, ws.utm_source;
    </pre>
-    <p>Findings: [Insert findings, e.g., mobile conversion rates higher for Google Search].</p>
+    <p>Findings: Overall desktop sessions surpassed mobile sessions with Google Search having the highest conversion rate.</p>
 
     <!-- Direct Traffic and Conversion Analysis -->
     <h3>5. Direct Traffic and Conversion Analysis</h3>
@@ -205,7 +205,7 @@ SELECT YEAR(created_at) AS yr, MONTH(created_at) AS mo,
 FROM website_sessions
 GROUP BY 1, 2;
     </pre>
-    <p>Findings: Direct traffic had a substantial impact on non-brand conversions, with [include specific trend, e.g., monthly increases]. This emphasizes the importance of direct traffic in brand engagement.</p>
+    <p>Findings: Direct traffic as a fraction of non-brand campaigns grew from 5% in 2012 to 16% in 2015, indicating stronger user engagement and loyalty. Similarly, an increase in organic search traffic over the years reflects improved brand from 0.38% to 15% recognition and visibility.</p>
 
     <!-- Conclusion -->
     <div class="subsection">
@@ -267,7 +267,7 @@ LEFT JOIN bounce b ON r.website_session_id = b.website_session_id
 GROUP BY l.pageview_url, WEEK(r.created_at);
         </pre>
         <p class="section-description">
-            Findings: The analysis indicated varying bounce rates across different landing pages. [Insert specific insights].
+            Findings: The analysis indicated varying bounce rates across different landing pages.
         </p>
     </div>
 
@@ -320,7 +320,7 @@ GROUP BY l.pageview_url, WEEK(r.created_at);
             
         </pre>
         <p class="section-description">
-            Findings: The funnel analysis revealed critical insights into user drop-off points. [Insert specific insights].
+            Findings: The funnel analysis revealed critical insights into user drop-off points.The lowest conversion rate was observed between the billing page and the order confirmation page(about 60% drop-off), indicating potential friction or issues on the billing page. To address this, two alternative billing page designs were introduced to simplify the process and improve user flow.
         </p>
     </div>
 
@@ -386,7 +386,7 @@ WHERE ws.created_at > '2012-10-06' AND ws.created_at < '2013-04-06'
 GROUP BY 1;
         </pre>
         <p class="section-description">
-            Findings: The analysis revealed significant shifts in user behavior pre- and post-launch of "Love Bear." [Insert specific results, e.g., the percentage of sessions navigating to the next page increased from X% to Y% after the launch.] This indicates a positive response to the new product, encouraging users to explore further.
+            Findings: The analysis revealed significant shifts in user behavior pre- and post-launch of "Love Bear". Three months prior to the product launch, 73% of users clicked from the product page to the product options, and this figure increased to 76.5% three months after the launch. This indicates a positive response to the new product, encouraging users to explore further.
         </p>
     </div>
 
@@ -432,7 +432,7 @@ AND pageview_url IN ('/the-original-mr-fuzzy', '/the-forever-love-bear')
 GROUP BY 1;
         </pre>
         <p class="section-description">
-            Findings: The funnel analysis illustrated how the introduction of "Love Bear" influenced conversion rates. [Insert specific conversion rates, e.g., viewing to purchasing rates for each product before and after the launch.] This data is essential in understanding the effectiveness of the new product in driving sales and customer engagement.
+            Findings: The funnel analysis illustrated how the introduction of "Love Bear" influenced conversion rates.fter conducting the funnel analysis from product viewing to purchase, it was found that while the older product, "The Original Mr. Fuzzy," had a greater total number of orders, the newly launched product, "The Forever Love Bear," achieved a higher purchase-to-viewing conversion rate of 18%, compared to 14% for the older product.This data is essential in understanding the effectiveness of the new product in driving sales and customer engagement.
         </p>
     </div>
 
@@ -459,7 +459,7 @@ WHERE ws.created_at BETWEEN '2012-10-06' AND '2013-04-06'
 GROUP BY 1;
         </pre>
         <p class="section-description">
-            Findings: The analysis revealed notable differences in conversion rates and average order values before and after the launch of "Love Bear." [Insert specific findings, e.g., the average order value increased from X to Y, and conversion rates improved by Z%.] This highlights the positive impact of the product launch on the financial metrics of the e-commerce site.
+            Findings: The analysis revealed notable differences in conversion rates and average order values before and after the launch of "Love Bear". Following the product launch, the average margin per order rose from $30.50 to $32.00, while the average revenue per order increased from $50.00 to $52.20. These changes indicate a positive impact resulting from the product launch. This highlights the positive impact of the product launch on the financial metrics of the e-commerce site.
         </p>
     </div>
 
@@ -526,7 +526,7 @@ GROUP BY 1;
 SELECT * FROM sessions_w_repeats WHERE user_id = 152837;
         </pre>
         <p class="section-description">
-            Findings: This analysis allowed me to quantify how many users engage in repeat sessions. [Insert specific results, e.g., "X users had Y repeat sessions."] Understanding user engagement is crucial for optimizing retention strategies.
+            Findings: This analysis allowed me to quantify how many users engage in repeat sessions.The data shows that there were 126,813 users with zero repeat sessions, while only 14,086 users had one repeat session. Notably, just 315 users had two repeat sessions, and 4,686 users had three repeat sessions..Understanding user engagement is crucial for optimizing retention strategies.
         </p>
     </div>
     
@@ -554,7 +554,7 @@ SELECT AVG(diff_time) AS avg_time_diff,
 FROM data_t;
         </pre>
         <p class="section-description">
-            Findings: The analysis revealed insights into user behavior patterns concerning repeat sessions. [Insert specific findings regarding the average, minimum, and maximum time intervals, e.g., "The average time between sessions was X days."]
+            Findings: The analysis revealed insights into user behavior patterns concerning repeat sessions. The average time between sessions was 33.25 days, with a minimum interval of 1 day and a maximum of 69 days. This range indicates variability in user engagement, suggesting potential differences in how frequently users return.
         </p>
     </div>
     
@@ -580,7 +580,7 @@ WHERE created_at BETWEEN '2014-01-01' AND '2014-11-01'
 GROUP BY 1;
         </pre>
         <p class="section-description">
-            Findings: This analysis provided insights into traffic source effectiveness in attracting new versus repeat sessions. [Insert specific observations, e.g., "Organic search contributed to X% of new sessions and Y% of repeat sessions."]
+            Findings: This analysis provided insights into traffic source effectiveness in attracting new versus repeat sessions. Organic searches, followed by brand campaign visits and then direct URL entries, had the highest number of repeated sessions. This pattern indicates strong brand penetration, increased website engagement, and effective user retention, all of which are beneficial for the company.
         </p>
     </div>
     
@@ -596,7 +596,7 @@ GROUP BY 1;
             MONTH(oi.created_at) AS mo,
             COUNT(DISTINCT CASE WHEN oi.product_id = 1 THEN r.order_item_id END) AS p1_refunds,
             COUNT(DISTINCT CASE WHEN oi.product_id = 1 THEN r.order_item_id END) / COUNT(DISTINCT CASE WHEN oi.product_id = 1 THEN oi.order_item_id END) AS p1_refu_rate,
-            COUNT(DISTINCT CASE WHEN oi.product_id = 2 THEN r.order_item_id END) AS p2_refunds,
+            COUNT(DISTINCT CASE ssWHEN oi.product_id = 2 THEN r.order_item_id END) AS p2_refunds,
             COUNT(DISTINCT CASE WHEN oi.product_id = 2 THEN r.order_item_id END) / COUNT(DISTINCT CASE WHEN oi.product_id = 2 THEN oi.order_item_id END) AS p2_refu_rate,
             COUNT(DISTINCT CASE WHEN oi.product_id = 3 THEN r.order_item_id END) AS p3_refunds,
             COUNT(DISTINCT CASE WHEN oi.product_id = 3 THEN r.order_item_id END) / COUNT(DISTINCT CASE WHEN oi.product_id = 3 THEN oi.order_item_id END) AS p3_refu_rate
@@ -607,7 +607,7 @@ GROUP BY 1;
         
         </pre>
         <p class="section-description">
-            Findings: Tracking refund rates provided insights into customer satisfaction. [Insert observations, e.g., "Refund rates for Product A decreased from X% to Y% over the analyzed period, suggesting improved customer satisfaction."]
+            Findings: Tracking refund rates provided insights into customer satisfaction.The product "The Original Mr. Fuzzy" experienced a high refund rate, averaging 7.9%, from July to November 2012, which later decreased but then spiked sharply to 13.52% in August and September of 2014. In contrast, "The Forever Love Bear" maintained a consistently lower refund rate, mostly below 5%. For "The Birthday Sugar Panda," the average refund rate was 6.8% from its release in December 2013 through April 2014, after which the rate declined.
         </p>
     </div>
     
@@ -645,8 +645,8 @@ WHERE o.order_id BETWEEN 10000 AND 11000
 GROUP BY 1;
         </pre>
         <p class="section-description">
-            Findings: This analysis highlighted the most common cross-sold products alongside each primary product. [Insert specific findings, e.g., "Product X was cross-sold with Product Y in Z% of orders." This data offers insight into customer preferences and informs targeted marketing strategies to boost cross-selling opportunities.]
-        </p>
+            Findings: This analysis highlighted the most common cross-sold products alongside each primary product. Overall, Product 1 had the highest sales and was frequently cross-sold with Products 2 and 3, with Product 1 as the primary item. In contrast, when Products 2 or 3 were the primary items, the other two products were not often purchased together.
+         </p>
     </div>
 
     <!-- Click-Through Rates from Cart Page -->
@@ -707,7 +707,7 @@ SELECT * FROM cart_sessions_with_orders;
 DROP TEMPORARY TABLE cart_sessions_with_orders;
         </pre>
         <p class="section-description">
-            Findings: By tracking sessions that transitioned from the cart page to subsequent pages, I assessed the effectiveness of the cross-selling strategy. [Insert specific findings, such as the increase in the percentage of users moving to the next page after introducing cross-sell prompts. This data provides insights into user engagement with suggested items and informs adjustments to cross-selling tactics.]
+            Findings: By tracking sessions that transitioned from the cart page to subsequent pages, I assessed the effectiveness of the cross-selling strategy.Introducing the multi-cart option led to a 7.7% increase in the number of orders within one month, compared to the previous month. Total revenue rose by 8.75%, and click-through rates from the cart sessions also improved. Overall, allowing multiple products in the cart proved beneficial.
         </p>
     </div>
 
@@ -742,7 +742,7 @@ GROUP BY 1;
     <div class="subsection">
         <h3 class="section-subtitle">Conclusion</h3>
         <p class="section-description">
-            The cross-selling, cart behavior, and revenue analyses revealed the "Birthday Sugar Panda" launch's influence on customer purchasing patterns and overall revenue. These insights can inform cross-selling strategy adjustments, cart page optimizations, and future product launches to maximize customer engagement and revenue.
+            The cross-selling, cart behavior, and revenue analyses revealed the "Birthday Sugar Panda" launch's influence on customer purchasing patterns and overall revenue. Following the launch of the "Birthday Sugar Panda," the conversion rate rose from 6.93% to 7.15%, revenue per session increased from $3.88 to $4.56, and products ordered per order grew from 1.07 to 1.33, comparing three months before and after the launch. These metrics highlight the product's positive impact on the company’s success.
         </p>
     </div>
 </div>
