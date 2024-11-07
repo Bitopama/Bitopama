@@ -13,7 +13,7 @@ I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical En
 - **Programming & Data Analysis:** Python, SQL, MS Excel
 - **Data Visualization:** Power BI, Excel, DAX Expressions
 - **Machine Learning & Modeling:** Regression, Classification, Fault Detection
-- **Additional Skills:** Pivot Tables, VLOOKUP, Data Preprocessing
+- **Additional Skills:**  Data Preprocessing, Data Cleaning
 
 ---
 
@@ -41,20 +41,14 @@ I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical En
 
 ---
 
-### 3. [Fault Detection in Distillation Columns](https://bitopama.github.io/Bitopama/projects/fault-detection-distillation-columns) 🏭
-**Tools Used:** Aspen Plus, Aspen Dynamics, MATLAB  
-**Summary:** Built a fault detection model for distillation columns using data-driven modeling techniques, achieving **99.9% accuracy** in identifying faults.
+### 3. 1. [Road Traffic Accident Analysis Dashboard](https://bitopama.github.io/Bitopama/projects/road-traffic-accident-analysis) 🚗
+**Tools Used:** Power BI, DAX  
+**Summary:** A dynamic dashboard providing a comprehensive overview of road traffic accidents, analyzing severity, vehicle types, weather conditions, and road surface effects on accident rates.
 
 - **Key Insights:**
-  - Simulated fault scenarios and generated data to train classification models.
-  - Applied classification algorithms to detect faults, contributing to safer chemical processes.
-  - **Achievement:** Runner-Up in the IIChE Presentation Competition for our presentation on fault detection in chemical engineering.
-
----
-
-## 🏆 Achievements
-- **Runner-Up** in **IIChE Presentation Competition** (20+ teams) with a presentation on "Fault Detection and Diagnosis of Distillation Columns."
-- **5th Place** in **Data Drift Competition**, analyzing road traffic data for insights into safety and traffic flow improvements.
+  - Visualized accident severity levels (fatal, serious, slight) and compared monthly and yearly trends.
+  - Analyzed accident rates by road type, including single and dual carriageways, and urban vs. rural areas.
+  - Identified top vehicles involved in accidents (cars, motorcycles, trucks), and examined the impact of weather and road conditions on accident frequency.
 
 ---
 
@@ -63,9 +57,9 @@ I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical En
 |------------------------|-----------------------------------------|
 | **Programming**        | Python, SQL                            |
 | **Data Visualization** | Power BI, MS Excel                     |
-| **Data Manipulation**  | Pivot Tables, VLOOKUP, DAX Expressions |
+| **Data Manipulation**  | Data Preprocessing, DAX Expressions |
 | **Machine Learning**   | Classification, Regression             |
-| **Chemical Engineering** | Aspen Plus, Aspen Dynamics, MATLAB    |
+   
 
 ---
 
