@@ -19,7 +19,7 @@ I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical En
 
 ## 🌟 Featured Projects
 
-### 1. [E-Commerce Website Traffic Analysis](https://bitopama.github.io/Bitopama/projects/ecommerce-traffic-analysis) 📈
+### 1. [E-Commerce Website Traffic Analysis](https://github.com/Bitopama/E-Commerce-Website-Traffic-Analysis) 📈
 **Tools Used:** MySQL  
 **Summary:** An in-depth analysis of website traffic, conversion rates, and bounce rates. Focused on user behavior, session frequency, and product quality issues.
   
@@ -30,7 +30,7 @@ I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical En
 
 ---
 
-### 2. [Movie Dataset Analysis Dashboard](https://bitopama.github.io/Bitopama/projects/movie-dataset-dashboard) 🎬
+### 2. [Movie Dataset Analysis Dashboard](https://github.com/Bitopama/Movie-Analysis-Dashboard) 🎬
 **Tools Used:** Power BI, MS Excel  
 **Summary:** Designed a Power BI dashboard to explore trends in movie genres, runtime, and profitability.
 
@@ -41,7 +41,7 @@ I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical En
 
 ---
 
-### 3. 1. [Road Traffic Accident Analysis Dashboard](https://bitopama.github.io/Bitopama/projects/road-traffic-accident-analysis) 🚗
+### 3. 1. [Road Traffic Accident Analysis Dashboard](https://github.com/Bitopama/Portfolio-Projects) 🚗
 **Tools Used:** Power BI, DAX  
 **Summary:** A dynamic dashboard providing a comprehensive overview of road traffic accidents, analyzing severity, vehicle types, weather conditions, and road surface effects on accident rates.
 
