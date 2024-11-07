@@ -41,7 +41,7 @@ I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical En
 
 ---
 
-### 3. 1. [Road Traffic Accident Analysis Dashboard](https://github.com/Bitopama/Portfolio-Projects) 🚗
+### 3. [Road Traffic Accident Analysis Dashboard](https://github.com/Bitopama/Portfolio-Projects) 🚗
 **Tools Used:** Power BI, DAX  
 **Summary:** A dynamic dashboard providing a comprehensive overview of road traffic accidents, analyzing severity, vehicle types, weather conditions, and road surface effects on accident rates.
 
