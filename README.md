@@ -1,45 +1,81 @@
-# Bitopama Modak's Data Analyst Portfolio
+# 🎉 Welcome to My Data Analyst Portfolio! [![Portfolio Badge](https://img.shields.io/badge/Portfolio-Visit-brightgreen)](https://bitopama.github.io/Bitopama/)
 
-Welcome to my data analyst portfolio! This site showcases projects, skills, and experiences in data analytics, developed to demonstrate my proficiency in data visualization, machine learning, and data-driven decision-making. 
-
-**Portfolio URL:** [https://bitopama.github.io/Bitopama/](https://bitopama.github.io/Bitopama/)
+Hey there! I’m **Bitopama Modak**, a data analyst with a strong foundation in chemical engineering and a passion for transforming raw data into meaningful insights. This portfolio showcases my skills, projects, and achievements in the data analytics field.
 
 ---
 
-## 📂 About Me
-I am Bitopama Modak, a passionate data analyst with a background in Chemical Engineering from Jadavpur University. I specialize in statistical analysis, data visualization, and machine learning, with experience in tools like Power BI, SQL, MS Excel, and Python. My goal is to leverage data to deliver actionable insights that drive business success.
+## 👩‍💻 About Me
+I'm an aspiring Data Analyst pursuing a **Bachelor of Engineering in Chemical Engineering** at **Jadavpur University**. With hands-on experience in **statistical analysis**, **data visualization**, and **machine learning**, I specialize in uncovering trends and insights that drive informed decisions.
 
-## 🛠️ Skills and Tools
-- **Programming:** Python
-- **Data Analysis & Visualization:** Power BI, MS Excel, SQL
-- **Data Science & Machine Learning:** Regression Analysis, Classification Models, Fault Detection
-- **Database Management:** MySQL
-- **Additional Skills:** Pivot Tables, VLOOKUP, DAX Expressions
+---
 
-## 💼 Projects
-### 1. E-Commerce Website Traffic Analysis
-- **Tools Used:** MySQL
-- **Overview:** Analyzing traffic sources, bounce rates, and conversion funnels. Included deep insights into user behavior patterns, session timing, and product refund trends.
-- **Key Insights:** Identified key drop-off points in the checkout process for the product "Original Mr. Fuzzy," analyzed cross-sell trends, and evaluated traffic sources for new vs. repeat sessions.
+## 🛠️ My Skills
+- **Programming & Data Analysis:** Python, SQL, MS Excel
+- **Data Visualization:** Power BI, Excel, DAX Expressions
+- **Machine Learning & Modeling:** Regression, Classification, Fault Detection
+- **Additional Skills:** Pivot Tables, VLOOKUP, Data Preprocessing
 
-### 2. Movie Dataset Analysis Dashboard
-- **Tools Used:** Power BI, MS Excel
-- **Overview:** Created a comprehensive dashboard displaying insights like average runtime trends, popular genres, and ROI analysis.
-- **Key Insights:** Determined top directors based on ratings, tracked approval index trends, and tagged duplicate titles to differentiate release years.
+---
 
-### 3. Fault Detection in Distillation Columns
-- **Tools Used:** Aspen Plus, MATLAB
-- **Overview:** Developed simulations and applied classification algorithms for fault detection, achieving 99.9% accuracy.
-- **Recognition:** Secured Runner-Up in IIChE Presentation Competition, presenting insights into fault diagnosis for chemical engineering processes.
+## 🌟 Featured Projects
+
+### 1. [E-Commerce Website Traffic Analysis](https://bitopama.github.io/Bitopama/projects/ecommerce-traffic-analysis) 📈
+**Tools Used:** MySQL  
+**Summary:** An in-depth analysis of website traffic, conversion rates, and bounce rates. Focused on user behavior, session frequency, and product quality issues.
+  
+- **Key Insights:**
+  - Conducted funnel analysis for “Original Mr. Fuzzy” to reveal critical checkout drop-off points.
+  - Tracked user behavior for cross-sell trends and identified refund rates by traffic source and session timing.
+  - Developed a bounce rate analysis for landing pages and a time-series trend of product refunds.
+
+---
+
+### 2. [Movie Dataset Analysis Dashboard](https://bitopama.github.io/Bitopama/projects/movie-dataset-dashboard) 🎬
+**Tools Used:** Power BI, MS Excel  
+**Summary:** Designed a Power BI dashboard to explore trends in movie genres, runtime, and profitability.
+
+- **Key Insights:**
+  - Analyzed genre popularity and ROI trends to rank top directors by ratings.
+  - Created DAX measures to calculate profitability, and flagged movies with duplicate titles by adding “old” or “new” tags.
+  - Visualized the relationship between approval index and ROI over time.
+
+---
+
+### 3. [Fault Detection in Distillation Columns](https://bitopama.github.io/Bitopama/projects/fault-detection-distillation-columns) 🏭
+**Tools Used:** Aspen Plus, Aspen Dynamics, MATLAB  
+**Summary:** Built a fault detection model for distillation columns using data-driven modeling techniques, achieving **99.9% accuracy** in identifying faults.
+
+- **Key Insights:**
+  - Simulated fault scenarios and generated data to train classification models.
+  - Applied classification algorithms to detect faults, contributing to safer chemical processes.
+  - **Achievement:** Runner-Up in the IIChE Presentation Competition for our presentation on fault detection in chemical engineering.
+
+---
 
 ## 🏆 Achievements
-- **Runner-Up** in IIChE Presentation Competition on "Fault Detection and Diagnosis of Distillation Columns."
-- **5th Place** in the Data Drift Competition, analyzing road traffic data and developing insightful dashboards.
-
-## 📬 Contact
-- **Email:** [bitopama.m@gmail.com](mailto:bitopama.m@gmail.com)
-- **LinkedIn:** [LinkedIn Profile](https://www.linkedin.com/in/bitopama-modak)
+- **Runner-Up** in **IIChE Presentation Competition** (20+ teams) with a presentation on "Fault Detection and Diagnosis of Distillation Columns."
+- **5th Place** in **Data Drift Competition**, analyzing road traffic data for insights into safety and traffic flow improvements.
 
 ---
 
-Thank you for visiting my portfolio! Feel free to explore the projects, and please reach out if you have any questions or collaboration opportunities. 
+## 📊 Skills and Tools Summary
+| Category               | Tools & Skills                          |
+|------------------------|-----------------------------------------|
+| **Programming**        | Python, SQL                            |
+| **Data Visualization** | Power BI, MS Excel                     |
+| **Data Manipulation**  | Pivot Tables, VLOOKUP, DAX Expressions |
+| **Machine Learning**   | Classification, Regression             |
+| **Chemical Engineering** | Aspen Plus, Aspen Dynamics, MATLAB    |
+
+---
+
+## 📫 Connect with Me
+Let’s connect! Feel free to explore my work and reach out if you’re interested in collaboration or have questions.
+
+- **Email:** [bitopama.m@gmail.com](mailto:bitopama.m@gmail.com)
+- **LinkedIn:** [Bitopama Modak](https://www.linkedin.com/in/bitopama-modak)
+- **Portfolio Site:** [Visit Here](https://bitopama.github.io/Bitopama/)
+
+---
+
+Thank you for visiting my portfolio! I look forward to connecting and sharing insights with fellow data enthusiasts. 😊
